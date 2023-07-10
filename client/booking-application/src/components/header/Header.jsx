@@ -1,12 +1,12 @@
 import "./header.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBed, faPlane, faCar, faMountainSun, faTaxi} from "@fortawesome/free-solid-svg-icons";
+import {faBed, faPlane, faCar, faMountainSun, faTaxi, faCalendarDays, faPerson} from "@fortawesome/free-solid-svg-icons";
 const Header = ()=>{
     return(
         <div className="header">
             <div className="headerContainer">
                 <div className="headerList">
-                    <div className="listItems">
+                    <div className="listItems active">
                         <FontAwesomeIcon icon={faBed}/>
                         <span>Stays</span>
                     </div>
@@ -27,7 +27,31 @@ const Header = ()=>{
                         <span>Airport Taxi's</span>
                     </div>
                 </div>
-            </div>    
+                <h1 className="headerTitle">A lifeTime of Discount? It's Genius</h1>
+                <p className="headerDesc">Get rewarded for your travels, unlock instant savings of 10% or more for your next stays with obaidBooking</p>
+                <button className="headerButton">Sign In / Register</button>
+            
+                <div className="headerSearch">
+                    <div className="searchItem">
+                        <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                        <input type="text" placeholder="Where are you going?" className="headerTextInput"/>
+                    </div>
+                    <div className="searchItem">
+                        <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                        <span className="searchText">Day to Day</span>
+                    </div>
+                    <div className="searchItem">
+                        <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                        <span className="searchText">2 Adults 2 children 1 room</span>
+                    </div>
+                    <div className="searchItem">
+                        <button className="headerButton">Search</button>
+                    </div>
+
+
+                </div>
+            </div>
+            
         </div>
         
     )
