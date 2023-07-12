@@ -18,14 +18,24 @@ const Header = ()=>{
         }
       ]);
     
-    const [openOptions, seOpenOptions] = useState(false);
+    const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState(
         {
             adult:1,
             children:0,
             room:1
         }
-    )
+    );
+
+    const handleOptions = (name,operation)=>{
+        setOptions((prev)=>{
+            return{
+                ...prev,
+                [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+            };
+        });
+    };
+
 
     return(
         <div className="header">
@@ -63,7 +73,7 @@ const Header = ()=>{
                     </div>
                     <div className="searchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                        <span onClick={()=>{setOpenDate(!openDate)}} className="searchText">{`${format(date[0].startDate,"dd/MM/yy")} to ${format(date[0].endDate,"dd/MM/yy")}`}</span>
+                        <span onClick={()=>{setOpenDate(!openDate); setOpenOptions(false)}} className="searchText">{`${format(date[0].startDate,"dd/MM/yy")} to ${format(date[0].endDate,"dd/MM/yy")}`}</span>
                     { openDate && <DateRange
                         editableDateInputs={true}
                         onChange={item => setDate([item.selection])}
@@ -74,7 +84,34 @@ const Header = ()=>{
                     </div>
                     <div className="searchItem">
                         <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-                    <span className="searchText">{`${options.adult} adult . ${options.children} children . ${options.room} room` }</span>
+                        <span onClick={()=>{setOpenOptions(!openOptions); setOpenDate(false)}} className="searchText">{`${options.adult} adult . ${options.children} children . ${options.room} room` }</span>
+                        { openOptions  &&  
+                        <div className="options">
+                            <div className="optionItem">
+                                <span className="optionText">Adult</span>
+                                <div className="optionCounter">
+                                    <button className="optionCountButton" disabled={options.adult<=1} onClick={()=>handleOptions("adult","d")}>-</button>
+                                    <span className="optionCountText">{options.adult}</span>
+                                    <button className="optionCountButton" onClick={()=>handleOptions("adult","i")}>+</button>
+                                </div>
+                            </div>
+                            <div className="optionItem">
+                                <span className="optionText">Children</span>
+                                <div className="optionCounter">
+                                    <button className="optionCountButton" disabled={options.children===0} onClick={()=>handleOptions("children","d")}>-</button>
+                                    <span className="optionCountText">{options.children}</span>
+                                    <button className="optionCountButton" onClick={()=>handleOptions("children","i")}>+</button>
+                                </div>
+                            </div>
+                            <div className="optionItem">
+                                <span className="optionText">Room</span>
+                                <div className="optionCounter">
+                                    <button className="optionCountButton" disabled={options.room<=1} onClick={()=>handleOptions("room","d")}>-</button>
+                                    <span className="optionCountText">{options.room}</span>
+                                    <button className="optionCountButton" onClick={()=>handleOptions("room","i")}>+</button>
+                                </div>
+                            </div>
+                        </div>}
                     </div>
                     <div className="searchItem">
                         <button className="headerButton">Search</button>
