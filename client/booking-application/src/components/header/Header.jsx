@@ -7,7 +7,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { format } from "date-fns";
 
-const Header = ()=>{
+const Header = ({type})=>{
     
     const [openDate, setOpenDate] = useState(false);
     const [date, setDate] = useState([
@@ -31,15 +31,14 @@ const Header = ()=>{
         setOptions((prev)=>{
             return{
                 ...prev,
-                [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+                [name] : operation === "i" ? options[name] + 1 : options[name] - 1,
             };
         });
     };
 
-
     return(
         <div className="header">
-            <div className="headerContainer">
+            <div className={type==="list"? "headerContainer listMode" : "headerContainer"}>
                 <div className="headerList">
                     <div className="listItems active">
                         <FontAwesomeIcon icon={faBed}/>
@@ -62,6 +61,8 @@ const Header = ()=>{
                         <span>Airport Taxi's</span>
                     </div>
                 </div>
+                { type !== "list" && 
+                <>
                 <h1 className="headerTitle">A lifeTime of Discount? It's Genius</h1>
                 <p className="headerDesc">Get rewarded for your travels, unlock instant savings of 10% or more for your next stays with obaidBooking</p>
                 <button className="headerButton">Sign In / Register</button>
@@ -116,9 +117,7 @@ const Header = ()=>{
                     <div className="searchItem">
                         <button className="headerButton">Search</button>
                     </div>
-
-
-                </div>
+                </div></> }
             </div>
             
         </div>
