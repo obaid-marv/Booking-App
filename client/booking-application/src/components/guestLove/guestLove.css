@@ -1,0 +1,42 @@
+.gl{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.glItem{
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.glImg{
+    width: 100%;
+}
+.glCity{
+    font-weight: 100;
+    font-size: 14px;
+}
+.glPrice{
+    font-weight: 600;
+}
+.glName{
+    font-weight: bold;
+}
+.glRating{
+    font-size: 14px;
+}
+.glRating>button{
+    background-color: #003b95;
+    color: white;
+    border: none;
+    padding: 3px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.glRating>span{
+    font-size: 14px;
+}
+
