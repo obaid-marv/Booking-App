@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
+import SearchItem from "../../components/searchItem/SearchItem";
 
 
 
@@ -38,23 +39,50 @@ const List = ()=>{
 
                     <div className="lItem">
                         <label>Options</label>
-                        <div className="lOptionItem">
-                            <span className="lOptionText">
-                                Min price <small>per night</small>
-                            </span>
-                            <input type="text" className="lOptionInput" />
-                            <span className="lOptionText">
-                                Max price <small>per night</small>
-                            </span>
-                            <input type="text" className="lOptionInput" />
+                        <div className="lOptions">
+                            <div className="lOptionItem">
+                                <span className="lOptionText">
+                                    Min price <small>per night</small>
+                                </span>
+                                <input type="text" className="lOptionInput" />
+                            </div>
+                            <div className="lOptionItem">
+                                <span className="lOptionText">
+                                    Max price <small>per night</small>
+                                </span>
+                                <input type="text" className="lOptionInput" />
+                            </div>
+                            <div className="lOptionItem">
+                                <span className="lOptionText">
+                                    Adult
+                                </span>
+                                <input type="number" min={1} placeholder={options.adult} className="lOptionInput" />
+                            </div>
+                            <div className="lOptionItem">
+                                <span className="lOptionText">
+                                    Children
+                                </span>
+                                <input type="number" min={0} placeholder={options.children} className="lOptionInput" />
+                            </div>
+                            <div className="lOptionItem">
+                                <span className="lOptionText">
+                                    Rooms
+                                </span>
+                                <input type="number" min={1} placeholder={options.room} className="lOptionInput" />
 
-
+                            </div>
                         </div>
-
                     </div>
+                    <button>Search</button>                    
                 </div>
                 <div className="listResult">
-
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/> 
                 </div>
             </div>
         </div>
