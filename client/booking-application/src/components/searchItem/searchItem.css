@@ -11,7 +11,104 @@
 
 .sImg{
     width: 200px;
-    height: 200px;
+    height: inherit;
     object-fit: cover;
 }
 
+.sDesc{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    flex: 2;
+}
+
+.sTitle{
+    font-size: 20px;
+    color: #0071c2;
+}
+
+.sDistance{
+    font-size: 12px;
+}
+
+.sTaxi{
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.sSubtitle{
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+.sFeatures{
+    font-size: 12px;
+}
+
+.sCancel{
+    font-size: 12px;
+    color: #008009;
+    font-weight: bold;
+}
+
+.sCancelSubtitle{
+    font-size: 12px;
+    color: #008009;
+    margin-top: -10px;
+}
+
+.sDetails{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.sRating{
+    display: flex;
+    justify-content: space-between;
+}
+.sRating>span{
+    font-weight: 500;
+}
+
+.sRating>button{
+    background-color: #003580;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.sDetailText{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sPrice{
+    font-size: 24px;
+
+}
+.sTax{
+    font-size: 12px;
+    color: gray;
+}
+
+.sCheckButton{
+    background-color: #0071c2;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}

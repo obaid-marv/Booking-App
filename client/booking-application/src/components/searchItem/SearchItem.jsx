@@ -9,13 +9,21 @@ const SearchItem = () => {
             <span className="sTaxi">Free Airport Pickup</span>
             <span className="sSubtitle">Aparthotel Stare Miasto is located in the very center of Kraków’s Old Town, just 394 feet from the Main Market Square. It features spacious modern apartments with free WiFi.</span>
 
-            <span className="sFeatures">Room with attached bath</span>
-            <span className="sCancel">Free cancellation</span>
+            <span className="sFeatures">Room with attached bath.</span>
+            <span className="sCancel">Free cancellation!</span>
             <span className="sCancelSubtitle">You can cancel later, so lock in this price today</span>
                 
         </div>
         <div className="sDetails">
-            details
+            <div className="sRating">
+                <span>Excellent</span>
+                <button>7.9</button>
+            </div>
+            <div className="sDetailText">
+                <span className="sPrice">131$</span>
+                <span className="sTax">Includes taxes and fees</span>
+                <button className="sCheckButton">See Availability</button>
+            </div>
         </div>
     </div>
   )
