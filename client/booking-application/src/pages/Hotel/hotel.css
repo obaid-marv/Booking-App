@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+
 }
 .hotelWrapper{
     width: 100%;
@@ -117,3 +118,47 @@
     font-weight: bold;
     border-radius: 5px;  
 }
+
+
+.slider{
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    margin-top: -20px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.258);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+}
+
+.sliderWrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderImg{
+    height: 80vh;
+    width: 80%;
+}
+
+.cross{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+}
+
+.arrow{
+    margin: 20px;
+    font-size: 50px;
+    color: gray;
+}
+
+ 
